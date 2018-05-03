@@ -1,0 +1,13 @@
+/**
+ * Function to create arrow from SVG file
+ */
+ @mixin arrow() {
+    content: '';
+    width: 20px;
+    height: 36px;
+    background-image: url('../../img/icon/arrow.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 10%;
+  }

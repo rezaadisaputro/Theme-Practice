@@ -1,0 +1,29 @@
+/**
+ * Prevent overlapping content
+ */
+ html,
+ body {
+   overflow-x: hidden;
+ }
+ 
+ /**
+  * Set background image on first section
+  */
+ body {
+   width: 100%;
+   min-height: 100vh;
+   background-image: url('../../img/background-hero.png');
+   background-size: auto 700px;
+   background-repeat: no-repeat;
+   background-position: top right;
+   color: $black;
+ 
+   @media (max-width: 768px) {
+     background-size: 100%;
+     background-position: calc(100% + 300px) 0;
+   }
+   @media (max-width: 480px) {
+     background-size: 600px auto;
+     background-position: calc(100% + 300px) 0;
+   }
+ }

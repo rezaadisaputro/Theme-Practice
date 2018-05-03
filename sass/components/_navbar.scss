@@ -1,0 +1,73 @@
+/**
+ * Override default Bootstrap navbar
+ */
+ .navbar {
+    background-color: transparent;
+  
+    .nav {
+      &-item {
+        padding: 8px;
+      }
+      &-link {
+        font-size: 16px;
+        color: transparentize($white, .2);
+  
+        &:hover {
+          color: $white;
+        }
+      }
+      
+      /**
+       * Add style for Button on navbar
+       */
+      &-item .btn {
+        padding: 8px 28px;
+        margin: 2px 0;
+        background-color: $orange;
+        border-radius: 30px;
+        font-size: 14px;
+        color: $white;
+        border: 0;
+        min-width: auto;
+  
+        &:hover {
+          background-color: darken($orange, 5%);
+        }
+      }
+    }
+  
+    /**
+     * Remove line height on navbar-brand
+     */
+    .navbar-brand {
+      line-height: 0;
+    }
+  
+    /**
+     * Add box-shadow and add navbar-toggle
+     */
+    @media (max-width: 768px) {
+      box-shadow: 0px -2px 14px 0px transparentize(#3F3F3F, .75);
+      background-color: $white;
+  
+      .navbar-toggle {
+        font-size: 36px;
+        color: $grey;
+        padding: 8px 12px;
+      }
+      .navbar-brand {
+        margin: 0 auto;
+        transform: translateX(-16px);
+      }
+    }
+  
+    /**
+     * Change size of navbar-toggle
+     */
+    @media (max-width: 480px) {
+      .navbar-toggle {
+        font-size: 24px;
+        padding: 6px 12px;
+      }
+    }
+  }

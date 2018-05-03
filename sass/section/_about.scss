@@ -1,0 +1,85 @@
+/**
+ * Style for section about
+ */
+ .about {
+    width: 100%;
+    min-height: 600px;
+    background-color: $blue;
+    color: $white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  
+    /**
+     * Create ornament image inside section
+     */
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 600px;
+      background-image: url('../../img/background-about.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  
+    /**
+     * Call mixin arrow and place it with :after
+     */
+    &:after {
+      @include arrow();
+      right: 12%;
+    }
+  
+    &-inner {
+      margin-left: 700px;
+      width: 400px;
+    }
+    &-description {
+      line-height: 1.6;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+  
+    /**
+     * Change content and ornament image size on small laptop
+     */
+    @media (max-width: 1024px) {
+      &:before {
+        width: 500px;
+      }
+      &-inner {
+        margin-left: 550px;
+        width: 400px;
+      }
+    }
+  
+    /**
+     * Change content and ornament image size on ipad
+     */
+    @media (max-width: 768px) {
+      &:before {
+        width: auto;
+        right: 0;
+      }
+      &-inner {
+        margin-left: 50px;
+        z-index: 100;
+        width: 80%;
+      }
+    }
+   
+    /**
+     * Change content size on phone
+     */
+    @media (max-width: 480px) {
+      &-inner {
+        margin-left: 20px;
+        width: 90%;
+      }
+    }
+  }

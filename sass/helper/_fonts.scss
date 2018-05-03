@@ -1,0 +1,91 @@
+/**
+ * Default global font
+ */
+ body {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/**
+ * Define type of fonts
+ */
+.text-quicksand {
+  font-weight: 400;
+}
+.text-quicksand-medium {
+  font-weight: 500;
+}
+.text-roboto-slab {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+}
+
+/**
+ * Define size of fonts
+ */
+$fontSize: 12 14 16 18 32 36 46 60;
+
+@each $size in $fontSize {
+  .text-size-#{$size} {  
+    font-size: $size * 1px;
+  }
+}
+
+/**
+ * Define class name for title
+ */
+.title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 5px;
+    background-color: $blue;
+  }
+
+  /**
+   * Define kind of title
+   */
+  &-white {
+    color: $white;
+
+    &:before {
+      background-color: $white;
+    }
+  }
+  &-small {
+    font-size: 18px;
+  }
+  &-medium {
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+  &-huge {
+    font-size: 60px;
+
+    &:before {
+      top: -10px;
+      width: 120px;
+    }
+  }
+
+  /**
+   * Change font size on mobile version
+   */
+  @media (max-width: 640px) {
+    &-medium {
+      font-size: 32px;
+    }
+    &-huge {
+      font-size: 36px;
+    }
+  }
+}

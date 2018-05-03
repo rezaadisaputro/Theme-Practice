@@ -1,0 +1,31 @@
+/**
+ * Style for section voucher
+ */
+ .voucher {
+    width: 100%;
+    min-height: 300px;
+    color: $white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+    background-image: url('../../img/background-voucher.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  
+    /**
+     * Create overlay in front of section
+     */
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 0;
+      background-color: transparentize($blue, 0.2);
+    }
+  }
+  
